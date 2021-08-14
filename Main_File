@@ -1,0 +1,17 @@
+from flask import Flask
+from flask_bootstrap import Bootstrap
+
+app = Flask(__name__)
+Bootstrap(app)
+@app.route('/')
+def create_app():
+    return 'hello world'
+
+
+def print_hi():
+    return 'Hello World!'
+
+
+if __name__ == '__main__':
+    print_hi()
+    app.run(host="0.0.0.0", debug=True, port=5000)
