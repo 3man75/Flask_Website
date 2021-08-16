@@ -1,17 +1,37 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
+import requests
+
+
+
 
 app = Flask(__name__)
 Bootstrap(app)
 @app.route('/')
 def create_app():
-    return 'hello world'
+
+    print(app)
+
+    return "Doggy stuff goes here"
 
 
-def print_hi():
-    return 'Hello World!'
+def get_dogs():
+
+    url = "https://dog.ceo/api/breeds/list/all"
+
+    request1 = requests.get(url)
+
+    dogs = request1.json()
+    dogs_dict = dogs["message"]
+    status = dogs["status"]
+    for dog_rotation in dogs_dict:
+        print(f"{dog_rotation} | {dogs_dict[dog_rotation]}")
+
+    return dogs["message"]
 
 
 if __name__ == '__main__':
-    print_hi()
+
+    returned_dict = get_dogs()
+
     app.run(host="0.0.0.0", debug=True, port=5000)
