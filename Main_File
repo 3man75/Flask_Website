@@ -4,7 +4,6 @@ import requests
 
 
 
-
 app = Flask(__name__)
 Bootstrap(app)
 @app.route('/')
@@ -12,26 +11,28 @@ def create_app():
 
     print(app)
 
-    return "Doggy stuff goes here"
+    return returned_dict
 
 
 def get_dogs():
 
     url = "https://dog.ceo/api/breeds/list/all"
 
-    request1 = requests.get(url)
+    dogRequest1 = requests.get(url) #uses request module to access the url provided above
 
-    dogs = request1.json()
+    dogs = dogRequest1.json()
     dogs_dict = dogs["message"]
     status = dogs["status"]
-    for dog_rotation in dogs_dict:
-        print(f"{dog_rotation} | {dogs_dict[dog_rotation]}")
+    #for dog_rotation in dogs_dict:
+    #   print(f"{dog_rotation} | {dogs_dict[dog_rotation]}") #print list of dogs from API website
 
-    return dogs["message"]
+    return dogs["message"], dogs_dict
 
 
 if __name__ == '__main__':
 
     returned_dict = get_dogs()
+
+    create_app()
 
     app.run(host="0.0.0.0", debug=True, port=5000)
