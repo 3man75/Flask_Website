@@ -1,7 +1,10 @@
+import shutil
 from flask import Flask
 from flask_bootstrap import Bootstrap
 import requests
-
+import json
+from PIL import Image
+import urllib
 
 
 app = Flask(__name__)
@@ -13,7 +16,6 @@ def create_app():
 
     return returned_dict
 
-
 def get_dogs():
 
     url = "https://dog.ceo/api/breeds/list/all"
@@ -21,18 +23,28 @@ def get_dogs():
     dogRequest1 = requests.get(url) #uses request module to access the url provided above
 
     dogs = dogRequest1.json()
-    dogs_dict = dogs["message"]
-    status = dogs["status"]
-    #for dog_rotation in dogs_dict:
-    #   print(f"{dog_rotation} | {dogs_dict[dog_rotation]}") #print list of dogs from API website
 
-    return dogs["message"], dogs_dict
+    return dogs.get("message")
 
+def get_dog_images():
+    imageUrl = "https://dog.ceo/api/breed/hound/images/random"
+
+    dog_request = requests.get(imageUrl)  #Here I get it from the web
+
+    #print(dog_request.json())
+
+    dog_image = dog_request.json()["message"]
+
+    print(dog_image) #prings image within the compiler
+
+    return dog_image
 
 if __name__ == '__main__':
 
     returned_dict = get_dogs()
 
     create_app()
+
+    get_dog_images()
 
     app.run(host="0.0.0.0", debug=True, port=5000)
