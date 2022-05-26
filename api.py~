@@ -15,14 +15,14 @@ def get_dogs():
 
     dogRequest1 = requests.get(url) #uses request module to access the url provided above
     
-    dogs = dogRequest1.json()
+    #dogs = dogRequest1.json()
 
     return dogs.get("message")
 
 def get_dog_images():
     imageUrl = "https://dog.ceo/api/breed/hound/images/random"
 
-    #dog_request = requests.get(imageUrl)  #Here I get it from the web
+    dog_request = requests.get(imageUrl)  #Here I get it from the web
 
     dog_image = dog_request.json()["message"]
 
