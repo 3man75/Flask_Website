@@ -1,3 +1,4 @@
-This is a small Flask application that requests an image from an API to see a dog picture.
+This is a small Flask application takes an online dog API called DOG CEO and takes information from the API. This includes
+JSON data from all available species of dogs as well as Dog pictures that show everyones favorite furry friends.
 
-It has an HTLM file for the website and an API to hold the backend of the website where the calls are made.
+Data Requests are done in the API file and later accessed by the Main.py file. 
