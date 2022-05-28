@@ -22,7 +22,7 @@ def get_dogs():
 def get_dog_images():
     imageUrl = "https://dog.ceo/api/breed/hound/images/random"
 
-    #dog_request = requests.get(imageUrl)  #Here I get it from the web
+    dog_request = requests.get(imageUrl)
 
     dog_image = dog_request.json()["message"]
 
