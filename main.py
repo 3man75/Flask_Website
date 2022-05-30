@@ -6,6 +6,7 @@ import requests
 import json
 import urllib
 import api
+import os
 
 
 
@@ -34,4 +35,6 @@ if __name__ == '__main__':
     #Creates first website
     create_app()
 
-    app.run(host="0.0.0.0", debug=True, port=2000)
+    PORT = os.getenv('PORT', 2000)
+
+    app.run(host="0.0.0.0", debug=True, port=PORT)
