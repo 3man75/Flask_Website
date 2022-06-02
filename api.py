@@ -2,6 +2,7 @@ import shutil
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask import render_template
+from flask import Response
 import requests
 import json
 from PIL import Image
