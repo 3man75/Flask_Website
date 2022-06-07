@@ -19,4 +19,8 @@ docker build -t <yourname>/dog-website .
 docker push <yourname>/dog-website
 ```
 
+My website can be found on https://flaskdogs.herokuapp.com/ and https://flaskdogs.herokuapp.com/dog.
+
+The first being a webspage that shows the full list of JSON objects that is inside of the Doge CEO app while the second page
+utilizes its abiliyt to call up an infinite amount of webpages.
 
