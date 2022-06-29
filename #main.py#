@@ -20,8 +20,8 @@ if __name__ == '__main__':
     
     #returned_dict = api.get_dogs()
 
-    #create_app()
+    
 
     #PORT = os.getenv('PORT', 2000)
 
-    app.run(host="0.0.0.0", debug=True)  #port=PORT
+    app.run(host="0.0.0.0", debug=True, port=PORT)

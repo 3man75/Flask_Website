@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Fate Grand Order Fan Website</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css')}}"/>
+
+    <style>
+      h1 {text-align: center;}
+    </style>
+    
+  </head>
+  <body>
+    <h1> Hello and Welcome To My Fate Grand Order Webstie!</h1>
+      
+    
+
+    
+
+  </body>
+</html>

@@ -1,9 +1,12 @@
-FROM python:3.8-alpine
+# syntax=docker/dockerfile:1
 
-COPY . /usr/src/app
-RUN ls -la /usr/src/app
+FROM python:3.8-slim-buster
 
-WORKDIR /usr/src/app
-RUN pip install -r requirements.txt
+WORKDIR /app
 
-CMD ["python", "main.py"]
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
