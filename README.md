@@ -24,3 +24,5 @@ My website can be found on https://flaskdogs.herokuapp.com/ and https://flaskdog
 The first being a webspage that shows the full list of JSON objects that is inside of the Doge CEO app while the second page
 utilizes its abiliyt to call up an infinite amount of webpages.
 
+Due to a change in Heroku services for its free tier this project will no longer be updated.
+
