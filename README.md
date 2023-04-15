@@ -26,3 +26,7 @@ utilizes its abiliyt to call up an infinite amount of webpages.
 
 Due to a change in Heroku services for its free tier this project will no longer be updated.
 
+Update - 4/15/2023
+
+Due to changes to Heroku's service options this website is no longer functioning. This project was able to succesfully show the use of an API
+with Flask to show information to users on the front page of a website and be launched to Heroku.
